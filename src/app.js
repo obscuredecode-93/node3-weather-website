@@ -22,19 +22,19 @@ hbs.registerPartials(partialPath);
 app.get('',(req,res) => {
     res.render('index',{
         title: 'Weather app',
-        name: 'Andrew Mead'
+        name: 'obscuredecode'
     }) 
 })
 app.get('/about',(req,res) => {
     res.render('about',{
         title: 'About me',
-        name: 'Andrew Mead'
+        name: 'obscuredecode'
     })
 })
 app.get('/help',(req,res) => {
     res.render('help',{
         title: 'Help',
-        name: 'Andrew Mead'
+        name: 'obscuredecode'
     })
 })
 
@@ -55,7 +55,7 @@ app.get('/weather', (req,res) => {
             }
             res.send({
                 location,
-                forecast: forecastData.summary + "It is currently " + forecastData.temperature + " degrees out.There is " + forecastData.chanceofRain + "% chance of rain.",
+                forecast: forecastData.forecast,
                 address:req.query.address
             });
           })
